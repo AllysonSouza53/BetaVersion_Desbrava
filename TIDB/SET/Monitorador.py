@@ -12,6 +12,7 @@ def monitorador(stop_event):
         Pasta_Atual = set(f for f in s.listdir(Pasta) if f.endswith(".txt"))
         novos = Pasta_Atual - Pasta_vazia
         for txt in novos:
-            sp.run(["python", ".py"])
+            print("monitorar")
+            sp.run(["python", "Inicialize.py"])
             s.remove(s.path.join(Pasta, txt))
         Pasta_vazia = Pasta_Atual

@@ -1,8 +1,12 @@
 from Helpers import ArchiveManipulation as AM
-from Controller import Controller as C
+from Controller.Controller import Controller
 
 def PegarProtocolo(caminho):
     Protocolo = AM.LerArquivo(caminho)
     return Protocolo
 
-C.Controller(PegarProtocolo(""))
+print("Protocolo")
+Controle = Controller(PegarProtocolo("TIDB//SET//memoria.txt"))
+Controle.Separar()
+Controle.Ordenar()
+print("Ordenou")

@@ -1,10 +1,10 @@
-import AlunoController as A
-import CidadeController as C
-import EscolaController as E
-import EstadoController as ES
-import PolstController as Po
-import ProfissaoController as Pro
-import ProssionalController as P
+from Controller.AlunoController import AlunoController
+from Controller.CidadeController import CidadesController
+from Controller.EscolaController import EscolaController
+from Controller.EstadoController import EstadoController
+from Controller.PolstController import PolstController
+from Controller.ProfissaoController import ProfissaoController
+from Controller.ProfissionalController import ProfissionaisController
 from Helpers import TextManipulation as T
 
 class Controller:
@@ -16,6 +16,7 @@ class Controller:
         self.definidor = ""
         self.condicao = ""
         self.controller = ""
+        print("Controller")
 
     def Separar(self):
         try:
@@ -30,18 +31,26 @@ class Controller:
 
     def Ordenar(self):
         if self.tabela == "alunos":
-            self.controller = A.AlunoController(self.protocolo)
+            self.controller = AlunoController(self.protocolo)
+            print("Criou Aluno")
         elif self.tabela == "cidades":
-            self.controller = C.CidadesController(self.protocolo)
+            self.controller = CidadesController(self.protocolo)
         elif self.tabela == "escolas":
-            self.controller = E.EscolaController(self.protocolo)
+            self.controller = EscolaController(self.protocolo)
         elif self.tabela == "estados":
-            self.controller = ES.EstadoController(self.protocolo)
+            self.controller = EstadoController(self.protocolo)
         elif self.tabela == "polst":
-            self.controller = Po.PolstController(self.protocolo)
+            self.controller = PolstController(self.protocolo)
         elif self.tabela == "profissoes":
-            self.controller = Pro.ProfissaoController(self.protocolo)
+            self.controller = ProfissaoController(self.protocolo)
         elif self.tabela == "profissionais":
-            self.controller = P.ProfissionaisController(self.protocolo)
+            self.controller = ProfissionaisController(self.protocolo)
         else:
             print("Não encontado!")
+
+        if self.definidor == 'I' or self.definidor == 'A':
+            self.controller.Salvar()
+        elif self.definidor == 'C':
+            self.controller.Consultar()
+        elif self.definidor == 'E':
+            self.controller.Deletar()

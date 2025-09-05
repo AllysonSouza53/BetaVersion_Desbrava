@@ -28,5 +28,5 @@ class PolstController:
     def Consultar(self):
         return self.Polst.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Polst.Deletar()

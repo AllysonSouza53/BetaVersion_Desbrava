@@ -28,5 +28,5 @@ class ProfissionaisController:
     def Consultar(self):
         return self.Profissionais.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Profissionais.Deletar()

@@ -28,5 +28,5 @@ class CidadesController:
     def Consultar(self):
         return self.Cidade.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Cidade.Deletar()

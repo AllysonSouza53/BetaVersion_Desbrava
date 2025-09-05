@@ -7,6 +7,7 @@ class Aluno:
         self.valores = valores
         self.definidor = definidor
         self.condicao = condicao
+        print(self.tabela,self.rotulos,self.valores,self.definidor,self.condicao)
 
     def Salvar(self):
         try:

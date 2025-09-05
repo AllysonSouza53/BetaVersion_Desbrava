@@ -28,5 +28,5 @@ class EscolaController:
     def Consultar(self):
         return self.Escola.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Escola.Deletar()

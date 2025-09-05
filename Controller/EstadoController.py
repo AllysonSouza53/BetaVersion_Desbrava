@@ -28,5 +28,5 @@ class EstadoController:
     def Consultar(self):
         return self.Estado.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Estado.Deletar()

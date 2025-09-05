@@ -9,7 +9,7 @@ class AlunoController:
         self.valores = ""
         self.definidor = ""
         self.condicao = ""
-        self.Aluno = A.Aluno(self.tabela, self.rotulos,self.valores,self.definidor,self.condicao)
+        print("AlunoController")
 
     def Separar(self):
         try:
@@ -18,6 +18,7 @@ class AlunoController:
             self.valores = T.LerLinha(self.protocolo, 2)
             self.definidor = T.LerLinha(self.protocolo, 3)
             self.condicao = T.LerLinha(self.protocolo, 4)
+            self.Aluno = A.Aluno(self.tabela, self.rotulos, self.valores, self.definidor, self.condicao)
 
         except Exception as e:
             print(e)
@@ -28,5 +29,5 @@ class AlunoController:
     def Consultar(self):
         return self.Aluno.Pesquisar()
 
-    def DeletarAluno(self):
+    def Deletar(self):
         self.Aluno.Deletar()
